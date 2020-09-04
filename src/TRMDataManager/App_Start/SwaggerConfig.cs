@@ -4,7 +4,9 @@ using TRMDataManager;
 using Swashbuckle.Application;
 using TRMDataManager.App_Start;
 
+#if DEBUG
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
+#endif
 
 namespace TRMDataManager
 {
