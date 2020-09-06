@@ -15,3 +15,6 @@ Building a real-world .NET application starting out with one set of requirements
 
 ## WPF with MVVM Project Setup - [PR #4](https://github.com/albertospelta/TimCoRetailManager/pull/4)
 * Set up WPF front-end project using Caliburn Micro as MVVM framework system.
+
+## Dependency Injection in WPF - [PR #5](https://github.com/albertospelta/TimCoRetailManager/pull/5)
+* Add dependency injection into  WPF project using Simple Container, which comes with Caliburn Micro.
