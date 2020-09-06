@@ -11,14 +11,16 @@ namespace TRMDesktopUI
 {
     public class Bootstrapper : BootstrapperBase
     {
-        public Bootstrapper()
-        {
-            Initialize();
-        }
+        private SimpleContainer _container = new SimpleContainer();
 
-        protected override void OnStartup(object sender, StartupEventArgs e)
-        {
-            DisplayRootViewFor<ShellViewModel>();
-        }
+        public Bootstrapper() => Initialize();
+
+        protected override void OnStartup(object sender, StartupEventArgs e) => DisplayRootViewFor<ShellViewModel>();
+
+        protected override object GetInstance(Type service, string key) => _container.GetInstance(service, key);
+
+        protected override IEnumerable<object> GetAllInstances(Type service) => _container.GetAllInstances(service);
+
+        protected override void BuildUp(object instance) => _container.BuildUp(instance);
     }
 }
