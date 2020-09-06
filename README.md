@@ -8,7 +8,10 @@ Building a real-world .NET application starting out with one set of requirements
 
 ## Configuring Swagger in WebAPI - [PR #2](https://github.com/albertospelta/TimCoRetailManager/pull/2)
 * Set up Swagger to document and demonstrate API's capabilities in an easy-to-use web interface. 
-* See how we wire up our bearer token authentication so that we can have endpoints secured with OAuth and yet still use the "Try It Now" buttons in Swagger.
+* See how we wire up bearer token authentication so that we can have endpoints secured with OAuth and yet still use the "Try It Now" buttons in Swagger.
 
 ## SQL Database Project - [PR #3](https://github.com/albertospelta/TimCoRetailManager/pull/3)
-* set up SSDT project so that we are ready to start building our SQL Server database.
+* Set up SSDT project so that we are ready to start building SQL Server database.
+
+## WPF with MVVM Project Setup - [PR #4](https://github.com/albertospelta/TimCoRetailManager/pull/4)
+* Set up WPF front-end project using Caliburn Micro as MVVM framework system.
