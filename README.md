@@ -24,3 +24,6 @@ Building a real-world .NET application starting out with one set of requirements
 
 ### WPF Login Form Creation - [PR #7](https://github.com/albertospelta/TimCoRetailManager/pull/7)
 * Set up a basic login form in WPF.
+
+### Wire Up the WPF Login form to the API - [PR #8](https://github.com/albertospelta/TimCoRetailManager/pull/8)
+* Connects the login form button to the authentication API endpoint and gets back the bearer token or an exception if failed.
