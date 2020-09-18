@@ -52,9 +52,9 @@ namespace TRMDesktopUI.ViewModels
             get => _errorMessage;
             set
             {
+                _errorMessage = value;
                 NotifyOfPropertyChange(() => IsErrorVisible);
                 NotifyOfPropertyChange(() => ErrorMessage);
-                _errorMessage = value;
             }
         }
 
@@ -69,7 +69,7 @@ namespace TRMDesktopUI.ViewModels
             }
         }
 
-        public async Task LogIn(string username, string password)
+        public async Task LogIn()
         {
             try
             {
