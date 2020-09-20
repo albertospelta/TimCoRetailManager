@@ -31,7 +31,7 @@ namespace TRMDesktopUI
                 .Singleton<IWindowManager, WindowManager>()
                 .Singleton<IEventAggregator, EventAggregator>()
                 .Singleton<ILoggedInUserModel, LoggedInUserModel>()
-                .Singleton<IAPIHelper, APIHelper>();
+                .Singleton<IApiHelper, ApiHelper>();
 
             var viewModelTypes = GetType().Assembly.GetTypes().Where((t) => t.IsClass && t.Name.EndsWith("ViewModel"));
             foreach (var viewModelType in viewModelTypes)

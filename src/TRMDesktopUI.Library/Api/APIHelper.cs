@@ -10,12 +10,12 @@ using TRMDesktopUI.Library.Models;
 
 namespace TRMDesktopUI.Library.Api
 {
-    public class APIHelper : IAPIHelper
+    public class ApiHelper : IApiHelper
     {
         private HttpClient _client;
         private ILoggedInUserModel _loggedInUser;
 
-        public APIHelper(ILoggedInUserModel loggedInUser)
+        public ApiHelper(ILoggedInUserModel loggedInUser)
         {
             InitializeClient();
 
