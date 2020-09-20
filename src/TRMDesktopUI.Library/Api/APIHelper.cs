@@ -47,5 +47,22 @@ namespace TRMDesktopUI.Library.Api
                 return result;
             }
         }
+
+        public async Task<LoggedInUserModel> GetLoggedInUserInfo(string token)
+        {
+            _client.DefaultRequestHeaders.Clear();
+            _client.DefaultRequestHeaders.Accept.Clear();
+            _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            _client.DefaultRequestHeaders.Add("Authorization", $"Bearer { token }");
+
+            using (var response = await _client.GetAsync("/User"))
+            {
+                if (response.IsSuccessStatusCode == false)
+                    throw new Exception(response.ReasonPhrase);
+
+                var result = await response.Content.ReadAsAsync<LoggedInUserModel>();
+                return result;
+            }
+        }
     }
 }

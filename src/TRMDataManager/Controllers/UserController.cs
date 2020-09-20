@@ -13,6 +13,7 @@ namespace TRMDataManager.Controllers
     [Authorize]
     public class UserController : ApiController
     {
+        [HttpGet]
         public UserModel GetById()
         {
             var data = new UserData();
