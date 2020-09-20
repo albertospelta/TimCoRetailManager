@@ -75,7 +75,10 @@ namespace TRMDesktopUI.ViewModels
             try
             {
                 ErrorMessage = "";
+
                 var user = await _apiHelper.Authenticate(Username, Password);
+                
+                await _apiHelper.GetLoggedInUserInfo(user.Access_Token);
             }
             catch (Exception ex)
             {
