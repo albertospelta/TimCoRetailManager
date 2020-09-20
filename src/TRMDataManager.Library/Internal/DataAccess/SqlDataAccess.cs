@@ -21,7 +21,7 @@ namespace TRMDataManager.Library.Internal.DataAccess
         {
             var connectionString = GetConnectionString(connectionStringName);
 
-            using (IDbConnection connection = new SqlConnection())
+            using (IDbConnection connection = new SqlConnection(connectionString))
             {
                 List<T> rows = connection.Query<T>(storedProcedure, parameters, commandType: CommandType.StoredProcedure).ToList();
                 return rows;
