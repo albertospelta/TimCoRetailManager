@@ -30,3 +30,6 @@ Address what to do when the login fails, create a way to display an error to the
 
 #### Getting User Data - [PR #10](https://github.com/albertospelta/TimCoRetailManager/pull/10)
 Get information from API about logged in user
+
+#### Sales Page Creation - [PR #11](https://github.com/albertospelta/TimCoRetailManager/pull/11)
+Added Sales page XAML and the supporting ViewModel, just scaffolds out ViewModel, does not add actual logic.
