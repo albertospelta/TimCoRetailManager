@@ -36,3 +36,6 @@ Added Sales page XAML and the supporting ViewModel, just scaffolds out ViewModel
 
 #### [PR #12](https://github.com/albertospelta/TimCoRetailManager/pull/12) Event Aggregation in WPF
 Added inter-form comunication using EventAggregator
+
+#### [PR #13](https://github.com/albertospelta/TimCoRetailManager/pull/13) Display Product Data
+Getting data from the database, through the API, and to the WPF view
