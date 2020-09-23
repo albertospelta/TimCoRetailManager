@@ -23,7 +23,7 @@ Add tables for the basic register system.
 Set up a basic login form in WPF.
 
 #### [PR #8](https://github.com/albertospelta/TimCoRetailManager/pull/8) Wire Up the WPF Login form to the API
-Connects the login form button to the authentication API endpoint and gets back the bearer token or an exception if failed.
+Connects the login form button to the authentication API endpoint and gets back the bearer token.
 
 #### [PR #9](https://github.com/albertospelta/TimCoRetailManager/pull/9) Login Form Error Handling
 Address what to do when the login fails, create a way to display an error to the user that is intuitive and inline.
@@ -33,3 +33,6 @@ Get information from API about logged in user.
 
 #### [PR #11](https://github.com/albertospelta/TimCoRetailManager/pull/11) Sales Page Creation
 Added Sales page XAML and the supporting ViewModel, just scaffolds out ViewModel, does not add actual logic.
+
+#### [PR #12](https://github.com/albertospelta/TimCoRetailManager/pull/12) Event Aggregation in WPF
+Added inter-form comunication using EventAggregator
