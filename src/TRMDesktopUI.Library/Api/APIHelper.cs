@@ -22,6 +22,8 @@ namespace TRMDesktopUI.Library.Api
             _loggedInUser = loggedInUser;
         }
 
+        public HttpClient ApiClient => _client;
+
         private void InitializeClient()
         {
             string api = ConfigurationManager.AppSettings["api"];
