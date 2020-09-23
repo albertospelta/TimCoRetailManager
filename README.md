@@ -33,3 +33,6 @@ Get information from API about logged in user.
 
 #### [PR #11](https://github.com/albertospelta/TimCoRetailManager/pull/11) Sales Page Creation
 Added Sales page XAML and the supporting ViewModel, just scaffolds out ViewModel, does not add actual logic.
+
+#### [PR #12](https://github.com/albertospelta/TimCoRetailManager/pull/12) Event Aggregation in WPF
+Added inter-form comunication using EventAggregator
