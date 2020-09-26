@@ -39,3 +39,6 @@ Added inter-form comunication using EventAggregator
 
 #### [PR #13](https://github.com/albertospelta/TimCoRetailManager/pull/13) Display Product Data
 Getting data from the database, through the API, and to the WPF view
+
+#### [PR #14](https://github.com/albertospelta/TimCoRetailManager/pull/14) Wire Up the WPF Shopping Cart
+Adds functionality to add items to cart, get subtotal and update quantities
