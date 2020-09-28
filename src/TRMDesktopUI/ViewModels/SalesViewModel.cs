@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TRMDesktopUI.Library.Api;
+using TRMDesktopUI.Library.Helpers;
 using TRMDesktopUI.Library.Models;
 
 namespace TRMDesktopUI.ViewModels
@@ -15,13 +16,15 @@ namespace TRMDesktopUI.ViewModels
         private const int DefaultItemQuantity = 1;
 
         private readonly IProductEndpoint _productEndpoint;
+        private readonly IConfigHelper _configHelper;
         private BindingList<ProductModel> _products;
         private BindingList<CartItemModel> _cart = new BindingList<CartItemModel>();
         private int _itemQuantity = DefaultItemQuantity;
 
-        public SalesViewModel(IProductEndpoint productEndpoint)
+        public SalesViewModel(IProductEndpoint productEndpoint, IConfigHelper configHelper)
         {
             _productEndpoint = productEndpoint;
+            _configHelper = configHelper;
         }
 
         protected override async void OnViewLoaded(object view)
@@ -82,17 +85,29 @@ namespace TRMDesktopUI.ViewModels
 
         public string SubTotal
         {
-            get => Cart.Sum((i) => i.Product.RetailPrice * i.QuantityInCart).ToString("C");
+            get
+            {
+                var value = CalculateSubTotal();
+                return value.ToString("C");
+            }
         }
 
         public string Tax
         {
-            get => "$0.00";
+            get
+            {
+                var value = CalculateTax();
+                return value.ToString("C");
+            }
         }
 
         public string Total
         {
-            get => "$0.00";
+            get
+            {
+                var value = CalculateSubTotal() + CalculateTax();
+                return value.ToString("C");
+            }
         }
 
         public bool CanAddToCart
@@ -131,6 +146,8 @@ namespace TRMDesktopUI.ViewModels
             ItemQuantity = DefaultItemQuantity;
 
             NotifyOfPropertyChange(() => SubTotal);
+            NotifyOfPropertyChange(() => Tax);
+            NotifyOfPropertyChange(() => Total);
         }
 
         public bool CanRemoveFromCart
@@ -144,6 +161,8 @@ namespace TRMDesktopUI.ViewModels
         public void RemoveFromCart()
         {
             NotifyOfPropertyChange(() => SubTotal);
+            NotifyOfPropertyChange(() => Tax);
+            NotifyOfPropertyChange(() => Total);
         }
 
         public bool CanCheckOut
@@ -157,6 +176,19 @@ namespace TRMDesktopUI.ViewModels
         public void CheckOut()
         {
 
+        }
+
+        private decimal CalculateSubTotal()
+        {
+            var value = Cart.Sum((i) => i.Product.RetailPrice * i.QuantityInCart);
+            return value;
+        }
+
+        private decimal CalculateTax()
+        {
+            var rate = _configHelper.GetTaxRate();
+            var value = Cart.Sum((i) => i.Product.IsTaxable ? i.Product.RetailPrice * i.QuantityInCart * rate : 0);
+            return value;
         }
     }
 }

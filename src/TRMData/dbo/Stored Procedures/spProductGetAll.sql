@@ -8,7 +8,8 @@ BEGIN
 		p.[ProductName],
 		p.[Description],
 		p.[RetailPrice],
-		p.[QuantityInStock]
+		p.[QuantityInStock],
+		p.[IsTaxable]
 	FROM 
 		[dbo].[Product] AS p
 	ORDER BY
