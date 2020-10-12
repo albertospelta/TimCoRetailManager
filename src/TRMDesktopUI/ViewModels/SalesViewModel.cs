@@ -187,8 +187,8 @@ namespace TRMDesktopUI.ViewModels
         private decimal CalculateTax()
         {
             var rate = _configHelper.GetTaxRate();
-            var value = Cart.Sum((i) => i.Product.IsTaxable ? i.Product.RetailPrice * i.QuantityInCart * rate : 0);
-            return value;
+            var tax = Cart.Where((i) => i.Product.IsTaxable).Sum((i) => i.Product.RetailPrice * i.QuantityInCart * rate);
+            return tax;
         }
     }
 }
