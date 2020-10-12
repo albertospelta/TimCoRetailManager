@@ -45,3 +45,6 @@ Adds functionality to add items to cart, get subtotal and update quantities
 
 #### [PR #15](https://github.com/albertospelta/TimCoRetailManager/pull/15) Modifying SQL, the API, and WPF to Add Taxes
 Added IsTaxable to table Products and the ability to tax (or not) individual products
+
+#### [PR #16](https://github.com/albertospelta/TimCoRetailManager/pull/16) Early Refactoring
+Refactor the application to put a few tweaks in place
