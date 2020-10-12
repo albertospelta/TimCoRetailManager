@@ -42,3 +42,6 @@ Getting data from the database, through the API, and to the WPF view
 
 #### [PR #14](https://github.com/albertospelta/TimCoRetailManager/pull/14) Wire Up the WPF Shopping Cart
 Adds functionality to add items to cart, get subtotal and update quantities
+
+#### [PR #15](https://github.com/albertospelta/TimCoRetailManager/pull/15) Modifying SQL, the API, and WPF to Add Taxes
+Added IsTaxable to table Products and the ability to tax (or not) individual products
